@@ -1,18 +1,19 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: nginx
+  creationTimestamp: null
   labels:
-    run: nginx
+    app: nginx
+    app.kubernetes.io/instance: demo-argo-app
+  name: frontend-service
+  namespace: test
 spec:
-  type: NodePort
   ports:
-  - port: 8080
-    targetPort: 80
+  - port: 80
     protocol: TCP
-    name: http
-  - port: 443
-    protocol: TCP
-    name: https
+    targetPort: 8080
   selector:
-    run: nginx
+    app: nginx
+  type: NodePort
+status:
+  loadBalancer: {}

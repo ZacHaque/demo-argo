@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: footstepsolutions/mysampleweb
+        image: footstepsolutions/myresume:v1
         ports:
         - containerPort: 80

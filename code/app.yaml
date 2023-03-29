@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: footstepsolutions/demo-color
+        image: nginx #footstepsolutions/demo-color
         ports:
         - containerPort: 80

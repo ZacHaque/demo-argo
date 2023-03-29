@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: myresume-demo
+  name: demo-color
   namespace: test
   labels:
     app: nginx
@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: footstepsolutions/myresume:v1
+        image: footstepsolutions/demo-color
         ports:
         - containerPort: 80

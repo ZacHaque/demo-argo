@@ -7,10 +7,10 @@ spec:
   # ingressClassName: nginx
   tls:
   - hosts:
-    - "color-tls.cloudgypsy.com.au"
+    - "cloudgypsy.com.au"
     secretName: cloudgypsy-tls
   rules:
-  - host: "color-tls.cloudgypsy.com.au"
+  - host: "cloudgypsy.com.au"
     http:
       paths:
         - pathType: Prefix

@@ -9,7 +9,7 @@ spec:
   - hosts:
     - "color.cloudgupsy.com.au"
     # secretName: cloudgypsy-tls-chain
-    secretName: cloudgypsy-tls
+    secretName: color-tls-secret #cloudgypsy-tls
   rules:
   - host: "color.cloudgupsy.com.au"
     http:

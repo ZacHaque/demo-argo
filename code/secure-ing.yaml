@@ -8,8 +8,8 @@ spec:
   tls:
   - hosts:
     - "cloudgypsy.com.au"
-    # secretName: cloudgypsy-tls-chain
-    secretName: cloudgypsy-tls
+    secretName: cloudgypsy-tls-chain
+    # secretName: cloudgypsy-tls
   rules:
   - host: "cloudgypsy.com.au"
     http:

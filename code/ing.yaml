@@ -1,16 +1,45 @@
+# kind: Ingress
+# apiVersion: networking.k8s.io/v1
+# metadata:
+#   name: frontend-service
+#   namespace: test
+#   # annotations:
+#   #   nginx.ingress.kubernetes.io/rewrite-target: /
+# spec:
+#   rules:
+#   -
+#     host: color.cloudgypsy.com.au
+#     http:
+#       paths:
+#       -
+#         path: /
+#         backend:
+#           serviceName: frontend-service
+#           servicePort: 80
+---
+apiVersion: networking.k8s.io/v1
 kind: Ingress
-apiVersion: extensions/v1beta1
 metadata:
   name: frontend-service
-  namespace: test
 spec:
   rules:
-  -
-    host: color.cloudgypsy.com.au
+  - host: "color.cloudgypsy.com.au"
     http:
       paths:
-      -
-        path: /
+      - pathType: Prefix
+        path: "/bar"
         backend:
-          serviceName: frontend-service
-          servicePort: 80
+          service:
+            name: frontend-service
+            port:
+              number: 80
+  # - host: "*.foo.com"
+  #   http:
+  #     paths:
+  #     - pathType: Prefix
+  #       path: "/foo"
+  #       backend:
+  #         service:
+  #           name: service2
+  #           port:
+  #             number: 80
